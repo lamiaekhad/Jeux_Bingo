@@ -8,7 +8,7 @@ namespace ProjetJeuPOO.Bingo
     {
         // List<int> annnceur = new List<int>();
 
-        private int[,] annonceur = new int[14,4];
+        private int[,] annonceur = new int[15, 5];
 
         BingoCard BINGOCARD = new BingoCard();
 
@@ -16,49 +16,35 @@ namespace ProjetJeuPOO.Bingo
 
         public void Remplircardannonceur()
         {
-            int a;
+            
             int i, j;
-            for (i = 0; i <Annonceur.Length; i++)
+            for (i = 0; i < 15; i++)
             {
-                for (j = 0; j < Annonceur.Length; j++)
+                for (j = 0; j < 5; j++)
                 {
-                    
+                    Annonceur[i, j] = 0;
 
                 }
-
             }
 
         }
         public void Affichercardannonceur()
         {
-            
+            Remplircardannonceur();
+            BINGOCARD.afficherBingo();
             int i, j;
-            for (i = 0; i <Annonceur.Length; i++)
+            for (i = 0; i <15; i++)
             {
-                for (j = 0; j <Annonceur.Length; j++)
+                for (j = 0; j < 5; j++)
                 {
-                    Console.WriteLine(Annonceur[i, j]);
+                    Console.Write(Annonceur[i, j]+ "\t");
                 }
                 Console.WriteLine();
             }
             Console.WriteLine();
         }
 
-        //BINGOCARD.afficherBingo();
-        //int i;
-
-        //for (i=0;i<15;i++)
-        //{
-        //    annnceur.Add(0);
-
-        //}
-        //foreach (int a in annnceur)
-        //{
-        //    Console.WriteLine(a);
-        //}
-        //Console.WriteLine();
     }
-
 
     
 }

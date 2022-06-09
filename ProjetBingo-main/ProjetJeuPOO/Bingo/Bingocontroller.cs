@@ -29,7 +29,7 @@ namespace ProjetJeuPOO.Bingo
 
         public void selectchoiceBingo()
         {
-            Console.Clear();
+            //Console.Clear();
             int option1 = 0;
             do
             {

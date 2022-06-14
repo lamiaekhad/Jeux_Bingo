@@ -29,7 +29,6 @@ namespace ProjetJeuPOO.Bingo
         {
             this.balls.Add(element);
         }
-
         public BingoBall getRanbomBall()
         {
             Random random = new Random();
@@ -44,7 +43,6 @@ namespace ProjetJeuPOO.Bingo
             return bingoball;
         }
        
-
         public int getSize()
         {
             return 0;

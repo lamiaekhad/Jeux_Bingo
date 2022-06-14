@@ -42,11 +42,11 @@ namespace ProjetJeuPOO.Bingo
            switch (choix2)
            {
                case "1":
-                QuantiteOfCard();
+               QuantiteOfCard();
                break;
 
                case "2":
-                showcard();
+               showcard();
                break;
                
                case "3":
@@ -57,13 +57,14 @@ namespace ProjetJeuPOO.Bingo
                docase4();
                break;
 
-                case "5":
-                
-                    break;
+               case "5":
+               Controller control = new Controller();
+               control.selectchoice();
+               break;
 
-                default:
-                    Console.WriteLine("choix non valide");
-                    break;
+               default:
+               Console.WriteLine("choix non valide");
+               break;
             }
         }
       
@@ -107,12 +108,12 @@ namespace ProjetJeuPOO.Bingo
         int quantite;
         public void QuantiteOfCard()
         {
+            //creer les cartes
             card = new BingoCard();
             card2 = new BingoCard();
             card3 = new BingoCard();
             card4 = new BingoCard();
             // faire choix de nombre de carte a jouer
-
             Console.WriteLine("Combiem de cartes desirez-vous : (max de 4)");
             quantite = int.Parse(Console.ReadLine());
 

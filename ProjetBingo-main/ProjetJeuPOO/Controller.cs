@@ -7,7 +7,6 @@ namespace ProjetJeuPOO
 {
     class Controller
     {
-        
         static void Main(string[] args)
         {
             Console.ForegroundColor = ConsoleColor.Cyan;
@@ -16,7 +15,7 @@ namespace ProjetJeuPOO
         }
 
         string nomutilisateur;
-        private void AfficherMenu()
+        public  void AfficherMenu()
         {
             Console.WriteLine("Veillez saisir votre nom:  ");
             nomutilisateur = Console.ReadLine();
@@ -30,22 +29,18 @@ namespace ProjetJeuPOO
             Console.WriteLine();
             Console.Write("Bonjour "+ nomutilisateur + " fait ton choix: ");
             Console.WriteLine();
-
         }
-        private void selectchoice()
+        public void selectchoice()
         {
             int option = 0;
             do
             {
                 AfficherMenu();
                 dochoice();
-                
 
             } while (option > 3 || option < 1);
-            
-
         }
-        private void dochoice()
+        public void dochoice()
         {
             Bingocontroller Bingo = new Bingocontroller();
 
@@ -64,11 +59,7 @@ namespace ProjetJeuPOO
                 case "3":
 
                     break;
-
             }
-           
         }
-
-      
     }
 }

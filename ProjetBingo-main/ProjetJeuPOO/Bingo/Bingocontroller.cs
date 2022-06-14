@@ -2,18 +2,18 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace ProjetJeuPOO.Bingo
+namespace ProjetJeuPOO.Bingo 
 {
-     class Bingocontroller
+     class Bingocontroller 
     {
         AnnonceurCard Annonceur = new AnnonceurCard();
-        
-        BingoCard card = new BingoCard();
-        BingoCard card2 = new BingoCard();
-        BingoCard card3 = new BingoCard();
-        BingoCard card4 = new BingoCard();
+        BingoCard card;
+        BingoCard card2;
+        BingoCard card3;
+        BingoCard card4;
+        Boulier boulier = new Boulier();
+        BingoBall ball;
 
-        BingoCard bingocard = new BingoCard();
         public Bingocontroller() { }
         public void MenuBingo()
         {
@@ -24,12 +24,10 @@ namespace ProjetJeuPOO.Bingo
             Console.WriteLine("3. Visualiser la carte de l’annonceur");
             Console.WriteLine("4. Tirez une boule");
             Console.WriteLine("5. Fin de partie");
-            Console.ReadKey();
         }
 
         public void selectchoiceBingo()
         {
-            //Console.Clear();
             int option1 = 0;
             do
             {
@@ -37,60 +35,90 @@ namespace ProjetJeuPOO.Bingo
                 DoChoiceBingo();
 
             } while (option1 > 5 || option1 < 1);
-
         }
-
         public void DoChoiceBingo()
         {
-            string choix2 = Console.ReadLine();
+           string choix2 = Console.ReadLine();
+           switch (choix2)
+           {
+               case "1":
+                QuantiteOfCard();
+               break;
 
-                switch (choix2)
-                {
-                    case "1":
-                        InitierPartie();
+               case "2":
+                showcard();
+               break;
+               
+               case "3":
+               Annonceur.Affichercardannonceur();
+               break;
 
-                        break;
+               case "4":
+               docase4();
+               break;
 
-                    case "2":
-                         showcard();
+                case "5":
+                
+                    break;
 
-                        break;
-
-                    case "3":
-                         Annonceur.Affichercardannonceur();
-
-                        break;
-
-                    case "4":
-
-                        break;
-
-                    case "5":
-
-                        break;
-                }
-
+                default:
+                    Console.WriteLine("choix non valide");
+                    break;
+            }
         }
       
-
-        public void InitierPartie()
+        public void docase4()
         {
-            QuantiteOfCard();
-        }
+            //tirer un boule du boulier
+            ball = boulier.getRanbomBall();
+            // retier les boules de la carte joueur
+            card.retier(ball.Number);
+            card2.retier(ball.Number);
+            card3.retier(ball.Number);
+            card4.retier(ball.Number);
+            //BINGO gagner
+            if (quantite == 1)
+            {
+                card.gagnerpartie();
 
+            }else if(quantite == 2)
+            {
+                card.gagnerpartie();
+                card2.gagnerpartie();
+
+            }
+            else if (quantite == 3)
+            {
+                card.gagnerpartie();
+                card2.gagnerpartie();
+                card3.gagnerpartie();
+
+            }
+            else if (quantite == 4)
+            {
+                card.gagnerpartie();
+                card2.gagnerpartie();
+                card3.gagnerpartie();
+                card4.gagnerpartie();
+            }
+            // remplir carte annonceur
+            Annonceur.remplircartannonceurwithball(ball.Number);
+        }
+        int quantite;
         public void QuantiteOfCard()
         {
-            Console.Clear();
-           
+            card = new BingoCard();
+            card2 = new BingoCard();
+            card3 = new BingoCard();
+            card4 = new BingoCard();
+            // faire choix de nombre de carte a jouer
 
-            int quantite;
             Console.WriteLine("Combiem de cartes desirez-vous : (max de 4)");
             quantite = int.Parse(Console.ReadLine());
 
             if (quantite == 1)
             {
                 card.remplirCard();
-                
             }
             else if (quantite == 2)
             {
@@ -102,7 +130,6 @@ namespace ProjetJeuPOO.Bingo
                 card.remplirCard();
                 card2.remplirCard();
                 card3.remplirCard();
-                
             }
             else if (quantite == 4)
             {
@@ -111,39 +138,42 @@ namespace ProjetJeuPOO.Bingo
                 card3.remplirCard();
                 card4.remplirCard();
             }
-            Console.ReadKey();
+            else
+            {
+                Console.WriteLine();
+                Console.WriteLine("choix non valide");
+                Console.WriteLine();
+            }
         }
 
         public void showcard()
         {
+            //visualiser les cartes
             int choice;
             Console.Write("Quelle carte voulez vous voir: ");
             choice = int.Parse(Console.ReadLine());
-            
-            
             if (choice == 1)
             {
                 card.visualiserCarte();
-
             }
             else if (choice == 2)
             {
-             
                 card2.visualiserCarte();
             }
             else if (choice == 3)
             {
-               
-                card3.visualiserCarte();
-
+               card3.visualiserCarte();
             }
             else if (choice== 4)
             {
-                
-                card4.visualiserCarte();
+               card4.visualiserCarte();
             }
-            Console.ReadKey();
+            else
+            {
+                Console.WriteLine();
+                Console.WriteLine("choix non valide");
+                Console.WriteLine();
+            }
         }
-
     }
 }

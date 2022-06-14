@@ -15,15 +15,20 @@ namespace ProjetJeuPOO
             program.selectchoice();
         }
 
+        string nomutilisateur;
         private void AfficherMenu()
         {
+            Console.WriteLine("Veillez saisir votre nom:  ");
+            nomutilisateur = Console.ReadLine();
+            Console.Clear();
+
             Console.WriteLine("Menu jeux: ");
             Console.WriteLine();
             Console.WriteLine("1. Bingo");
             Console.WriteLine("2. Simili Black Jack");
             Console.WriteLine("3. Le Pendu");
             Console.WriteLine();
-            Console.Write("Choisir jeu: ");
+            Console.Write("Bonjour "+ nomutilisateur + " fait ton choix: ");
             Console.WriteLine();
 
         }
@@ -50,7 +55,6 @@ namespace ProjetJeuPOO
             {
                 case "1":
                   Bingo.selectchoiceBingo();
-
                     break;
 
                 case "2":

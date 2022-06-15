@@ -58,8 +58,7 @@ namespace ProjetJeuPOO.Bingo
                break;
 
                case "5":
-               Controller control = new Controller();
-               control.selectchoice();
+                finpartie();
                break;
 
                default:
@@ -108,6 +107,7 @@ namespace ProjetJeuPOO.Bingo
         int quantite;
         public void QuantiteOfCard()
         {
+            
             //creer les cartes
             card = new BingoCard();
             card2 = new BingoCard();
@@ -153,19 +153,19 @@ namespace ProjetJeuPOO.Bingo
             int choice;
             Console.Write("Quelle carte voulez vous voir: ");
             choice = int.Parse(Console.ReadLine());
-            if (choice == 1)
+            if (choice == 1 )
             {
                 card.visualiserCarte();
             }
-            else if (choice == 2)
+            else if (choice == 2 )
             {
                 card2.visualiserCarte();
             }
-            else if (choice == 3)
+            else if (choice == 3 )
             {
                card3.visualiserCarte();
             }
-            else if (choice== 4)
+            else if (choice == 4)
             {
                card4.visualiserCarte();
             }
@@ -175,6 +175,27 @@ namespace ProjetJeuPOO.Bingo
                 Console.WriteLine("choix non valide");
                 Console.WriteLine();
             }
+        }
+
+        public void finpartie()
+        {
+            Console.WriteLine( "1- Demarer une nouvelle partie");
+            Console.WriteLine("2- Devenir au menu principal");
+            Console.WriteLine();
+            string choix2 = Console.ReadLine();
+
+            switch (choix2)
+            {
+                case "1":
+                    QuantiteOfCard();
+                    break;
+
+                case "2":
+                    Controller control = new Controller();
+                    control.selectchoice();
+                    break;
+            }
+         
         }
     }
 }

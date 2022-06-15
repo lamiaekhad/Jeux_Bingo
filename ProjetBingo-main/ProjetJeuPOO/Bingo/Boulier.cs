@@ -9,8 +9,7 @@ namespace ProjetJeuPOO.Bingo
     class Boulier : IBingoBoulier
     {
         private List<BingoBall> balls = new List<BingoBall>();
-        BingoCard bingoca = new BingoCard();
-        AnnonceurCard annonce = new AnnonceurCard();
+      
         internal List<BingoBall> Balls { get => balls; set => balls = value; }
 
         public Boulier()

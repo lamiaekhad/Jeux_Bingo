@@ -17,6 +17,7 @@ namespace ProjetJeuPOO
         string nomutilisateur;
         public  void AfficherMenu()
         {
+            Console.Clear();
             Console.WriteLine("Veillez saisir votre nom:  ");
             nomutilisateur = Console.ReadLine();
             Console.Clear();

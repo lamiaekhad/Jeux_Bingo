@@ -136,21 +136,7 @@ namespace ProjetJeuPOO.Bingo
                 Matrix[i, 2] = randresult;
 
                 Matrix[2, 2] = 0;
-
-                //string x = "X";
-                //int a;
-
-                // a = Int32.Parse(x);
-
-
-                // string b = "x";
-                //string v = Convert.ToString(Matrix[2, 2]);
-
-                //v = b;
-               // string result = string.Join("x", Matrix);
-
             }
-
         }
 
         public bool executerconditionN(int numbertovalid)

@@ -13,7 +13,7 @@ namespace ProjetJeuPOO.Bingo
         BingoCard card4;
         Boulier boulier = new Boulier();
         BingoBall ball;
-
+        int quantite;
         public Bingocontroller() { }
         public void MenuBingo()
         {
@@ -43,6 +43,7 @@ namespace ProjetJeuPOO.Bingo
            {
                case "1":
                QuantiteOfCard();
+               Annonceur.vidercardannonceur();
                break;
 
                case "2":
@@ -58,7 +59,7 @@ namespace ProjetJeuPOO.Bingo
                break;
 
                case "5":
-                finpartie();
+               finpartie();
                break;
 
                default:
@@ -70,7 +71,7 @@ namespace ProjetJeuPOO.Bingo
         public void docase4()
         {
             //tirer un boule du boulier
-            ball = boulier.getRanbomBall();
+             ball = boulier.getRanbomBall();
             // retier les boules de la carte joueur
             card.retier(ball.Number);
             card2.retier(ball.Number);
@@ -102,9 +103,10 @@ namespace ProjetJeuPOO.Bingo
                 card4.gagnerpartie();
             }
             // remplir carte annonceur
+           
             Annonceur.remplircartannonceurwithball(ball.Number);
         }
-        int quantite;
+        
         public void QuantiteOfCard()
         {
             
@@ -180,7 +182,7 @@ namespace ProjetJeuPOO.Bingo
         public void finpartie()
         {
             Console.WriteLine( "1- Demarer une nouvelle partie");
-            Console.WriteLine("2- Devenir au menu principal");
+            Console.WriteLine("2- Revenir au menu principal");
             Console.WriteLine();
             string choix2 = Console.ReadLine();
 
@@ -191,8 +193,7 @@ namespace ProjetJeuPOO.Bingo
                     break;
 
                 case "2":
-                    Controller control = new Controller();
-                    control.selectchoice();
+                    Controller.selectchoice();
                     break;
             }
          

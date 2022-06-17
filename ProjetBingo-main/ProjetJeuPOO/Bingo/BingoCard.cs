@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -248,6 +249,7 @@ namespace ProjetJeuPOO.Bingo
         }
         public void gagnerpartie()
         {
+            int count = 0;
             bool win = false;
             if (matrix[0, 0] == 0 && matrix[1, 1] == 0 && matrix[2, 2] == 0 && matrix[3, 3] == 0 && matrix[4, 4] == 0 
                 || matrix[0, 4] == 0 && matrix[1, 3] == 0 && matrix[2, 2] == 0 && matrix[3, 1] == 0 && matrix[4, 0] == 0)
@@ -264,15 +266,15 @@ namespace ProjetJeuPOO.Bingo
                         || matrix[0, j] == 0 && matrix[1, j] == 0 && matrix[2, j] == 0 && matrix[3, j] == 0 && matrix[4, j] == 0)
                     {
                         win = true;
-                        
                     }
                 }
             }
             if (win == true)
             {
                 AfficherBingowin();
-                
+                count++;
             }
+            
         }
     }
 }

@@ -13,7 +13,16 @@ namespace ProjetJeuPOO.Bingo
         
         public int[,] Annonceur { get => annonceur; set => annonceur = value; }
 
-      
+        public void vidercardannonceur()
+        {
+            for (int i = 0; i < 15; i++)
+            {
+                for (int j = 0; j < 5; j++)
+                {
+                    Annonceur[i, j]=0;
+                }
+            }
+        }
         public void Affichercardannonceur()
         {
             BINGOCARD.afficherBingo();

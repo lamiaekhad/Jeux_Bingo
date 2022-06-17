@@ -10,15 +10,15 @@ namespace ProjetJeuPOO
         static void Main(string[] args)
         {
             Console.ForegroundColor = ConsoleColor.Cyan;
-            Controller program = new Controller();
-            program.selectchoice();
+            
+            Controller.selectchoice();
         }
 
-        string nomutilisateur;
-        public  void AfficherMenu()
+       static string nomutilisateur;
+        public static void AfficherMenu()
         {
             Console.Clear();
-            Console.WriteLine("Veillez saisir votre nom:  ");
+            Console.WriteLine("Veuillez saisir votre nom:  ");
             nomutilisateur = Console.ReadLine();
             Console.Clear();
 
@@ -31,7 +31,7 @@ namespace ProjetJeuPOO
             Console.Write("Bonjour "+ nomutilisateur + " fait ton choix: ");
             Console.WriteLine();
         }
-        public void selectchoice()
+        public static void selectchoice()
         {
             int option = 0;
             do
@@ -41,10 +41,10 @@ namespace ProjetJeuPOO
 
             } while (option > 3 || option < 1);
         }
-        public void dochoice()
+        public static void dochoice()
         {
             Bingocontroller Bingo = new Bingocontroller();
-
+            BlackJackController blackJack = new BlackJackController();
             string choix = Console.ReadLine();
 
             switch (choix)
@@ -54,6 +54,7 @@ namespace ProjetJeuPOO
                     break;
 
                 case "2":
+                  blackJack.selectchoiceBJ();
 
                     break;
 
